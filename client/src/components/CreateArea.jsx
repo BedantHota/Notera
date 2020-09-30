@@ -30,7 +30,7 @@ function CreateArea(props) {
       .then(res => {
         console.log(res);
         console.log(res.data);
-      });  
+      });
   }
 
   return (
@@ -49,7 +49,7 @@ function CreateArea(props) {
           placeholder="Take a note..."
           rows="3"
         />
-        <button className="button" name={props.name} onClick={submitNote}>Add</button>
+        <button className="button" onClick={submitNote}>Add</button>
       </form>
     </div>
   );
