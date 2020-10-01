@@ -11,26 +11,18 @@ router.get("/", (req, res) => {
 
 router.post("/", (req, res) => {
     const note = req.body;
-    const newNote = new Note({ title: note.title, content: note.content });
+    const newNote = new Note(note);
 
-    newNote.save(function (err) {
-        if (err) {
-            console.log(err);
-        } else {
-            console.log("Document inserted successfully");
-        }
-    })
+    newNote.save()
+        .then(() => res.json("Note added"))
+        .catch(err => res.status(400).json("Error: " + err));
 });
 
 router.delete("/", (req, res) => {
     const idWeGotFromReact = req.body.noteId;
-    Note.findByIdAndDelete(idWeGotFromReact, (err, docs) => {
-        if (err) {
-            console.log(err);
-        } else {
-            console.log("Deleted Document");
-        }
-    })
+    Note.findByIdAndDelete(idWeGotFromReact)
+        .then(() => res.json('Note deleted.'))
+        .catch(err => res.status(400).json('Error: ' + err));
 })
 
 module.exports = router;
