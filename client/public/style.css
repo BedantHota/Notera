@@ -7,13 +7,17 @@
     font-family: "Montserrat", sans-serif;
   }
   body {
+    font-family: "Montserrat", sans-serif;
+    overflow-x: hidden;
     background: #eee;
     padding: 0 16px;
   }
   
   header {
+    display: "flex";
+    width: 100vw;
+    height: 15vh;
     background-color: #f5ba13;
-    margin: auto -16px;
     padding: 16px 32px;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
   }
@@ -23,6 +27,30 @@
     font-family: "McLaren", cursive;
     font-weight: 200;
   }
+
+    /* Header component */
+    .title {
+      font-size: 30px;
+      flex-grow: 1;
+      font-family: "McLaren", cursive;
+    }
+    
+    .drawer {
+      width: 240px;
+      flex-shrink: 0;
+    }
+    
+    .drawerHeader {
+      display: "flex";
+      align-items: "center";
+      padding: themespacing(0, 1);
+      justify-content: "flex-start";
+    }
+    
+
+
+
+    /* ------------------ */
   
   footer {
     position: absolute;
@@ -36,6 +64,7 @@
     color: #ccc;
   }
   .note {
+    font-family: "Montserrat", sans-serif;
     background: #fff;
     border-radius: 7px;
     box-shadow: 0 2px 5px #ccc;
@@ -103,3 +132,10 @@
     outline: none;
   }
   
+  .button{
+    font-size: 25px;
+  }
+
+  .create-note{
+    font-family: "Montserrat", sans-serif;
+  }

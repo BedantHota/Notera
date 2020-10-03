@@ -25,14 +25,6 @@ function App() {
 
 
   function deleteNote(id) {
-    axios({
-      method: 'delete',
-      url: 'http://localhost:5000',
-      data: {
-        noteId: id
-      }
-    });
-
     setNotes(notes => {
       return notes.filter((noteItem) => {
         return noteItem._id !== id;

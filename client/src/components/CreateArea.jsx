@@ -1,11 +1,18 @@
 import React, { useState } from "react";
 import axios from "axios";
+import Zoom from "@material-ui/core/Zoom";
 
 function CreateArea(props) {
+  const [isClicked, setClick] = useState(false);
+
   const [note, setNote] = useState({
     title: "",
     content: ""
   });
+
+  function handleClick() {
+    setClick(true);
+  }
 
   function handleChange(event) {
     const { name, value } = event.target;
@@ -19,39 +26,41 @@ function CreateArea(props) {
   }
 
   function submitNote(event) {
-    props.onAdd(note);
+    event.preventDefault();
     setNote({
       title: "",
       content: ""
     });
 
-    event.preventDefault();
-
     axios
       .post('http://localhost:5000', note)
       .then(res => {
-        console.log(res);
-        console.log(res.data);
+        props.onAdd(res.data);;
       });
   }
 
   return (
     <div>
-      <form action="/" method="post">
-        <input
-          name="title"
-          onChange={handleChange}
-          value={note.title}
-          placeholder="Title"
-        />
+      <form className="create-note" action="/" method="post">
+        {isClicked ? (
+          <input
+            name="title"
+            onChange={handleChange}
+            value={note.title}
+            placeholder="Title"
+          />
+        ) : null}
         <textarea
+          onClick={handleClick}
           name="content"
           onChange={handleChange}
           value={note.content}
           placeholder="Take a note..."
           rows="3"
         />
-        <button className="button" onClick={submitNote}>Add</button>
+        <Zoom in={isClicked ? true : false}>
+          <button className="button" onClick={submitNote}>+</button>
+        </Zoom>
       </form>
     </div>
   );

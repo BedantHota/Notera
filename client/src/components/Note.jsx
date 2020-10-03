@@ -5,6 +5,13 @@ import DeleteIcon from '@material-ui/icons/Delete';
 function Note(props) {
   function handleClick() {
     const id = props.noteId;
+    axios({
+      method: 'delete',
+      url: 'http://localhost:5000',
+      data: {
+        noteId: id
+      }
+    });
     props.onDelete(id);
   }
 
