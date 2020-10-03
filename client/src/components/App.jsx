@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
 import Note from "./Note";
 import CreateArea from "./CreateArea";
+import Trash from "./Trash";
+import Reminder from "./Reminder"; 
 
 function App() {
   const [notes, setNotes] = useState([]);
@@ -52,9 +55,22 @@ function App() {
   return (
     <div>
       <Header />
+      <Router>
+      <Switch>
+      <Route exact path="/">
       <CreateArea onAdd={addNote} />
       <NoteList />
+      </Route>
+      <Route path="/reminder">
+      <Reminder/>
+      </Route>
+      <Route path="/trash">
+      <Trash/>
+      </Route>
+      </Switch>
+      </Router>
       <Footer />
+      
     </div>
   );
 }

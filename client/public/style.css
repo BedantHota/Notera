@@ -19,7 +19,6 @@
     height: 15vh;
     background-color: #f5ba13;
     padding: 16px 32px;
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
   }
   
   header h1 {
@@ -138,4 +137,9 @@
 
   .create-note{
     font-family: "Montserrat", sans-serif;
+  }
+
+  a{
+    text-decoration: none;
+    color: grey;
   }
