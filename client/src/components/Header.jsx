@@ -17,12 +17,7 @@ import ListItemIcon from "@material-ui/core/ListItemIcon";
 import AddAlertIcon from "@material-ui/icons/AddAlert";
 import DeleteIcon from "@material-ui/icons/Delete";
 import HighlightIcon from "@material-ui/icons/Highlight";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
+import {Link} from "react-router-dom";
 
 const drawerWidth = 240;
 
@@ -128,7 +123,6 @@ export default function PersistentDrawerRight() {
           </IconButton>
         </div>
         <Divider />
-        <Router>
         <List>
           <Link to="/">
               <ListItem button key="Notes">
@@ -155,7 +149,6 @@ export default function PersistentDrawerRight() {
               </ListItem>
           </Link>
         </List>
-        </Router>
       </Drawer>
     </header>
   );

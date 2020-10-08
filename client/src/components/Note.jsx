@@ -7,7 +7,7 @@ function Note(props) {
     const id = props.noteId;
     axios({
       method: 'delete',
-      url: 'http://localhost:5000',
+      url: 'http://localhost:5000' + props.route,
       data: {
         noteId: id
       }

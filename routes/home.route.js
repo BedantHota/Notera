@@ -20,9 +20,11 @@ router.post("/", (req, res) => {
 
 router.delete("/", (req, res) => {
     const idWeGotFromReact = req.body.noteId;
+    
     Note.findByIdAndDelete(idWeGotFromReact)
         .then(() => res.json("Note Deleted"))
         .catch(err => res.status(400).json('Error: ' + err));
+
 });
 
 module.exports = router;

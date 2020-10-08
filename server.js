@@ -25,6 +25,7 @@ connection.once('open', () => {
 })
 
 app.use("/", require("./routes/home.route.js"));
+app.use("/trash", require("./routes/trash.route.js"));
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {

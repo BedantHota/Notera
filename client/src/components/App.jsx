@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
+import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
 import Note from "./Note";
@@ -28,6 +28,15 @@ function App() {
 
 
   function deleteNote(id) {
+    const responseId = {
+      id: id
+    };
+    axios
+      .post("http://localhost:5000/trash", responseId)
+      .then(res => {
+        console.log(res.data);
+      });
+
     setNotes(notes => {
       return notes.filter((noteItem) => {
         return noteItem._id !== id;
@@ -45,6 +54,7 @@ function App() {
             title={noteItem.title}
             content={noteItem.content}
             onDelete={deleteNote}
+            route="/"
             noteId={noteItem._id}
           />
         );
@@ -53,25 +63,20 @@ function App() {
   }
 
   return (
-    <div>
-      <Header />
-      <Router>
-      <Switch>
-      <Route exact path="/">
-      <CreateArea onAdd={addNote} />
-      <NoteList />
-      </Route>
-      <Route path="/reminder">
-      <Reminder/>
-      </Route>
-      <Route path="/trash">
-      <Trash/>
-      </Route>
-      </Switch>
-      </Router>
-      <Footer />
-      
-    </div>
+    <Router>
+      <div>
+        <Header />
+          <Switch>
+            <Route path="/" exact>
+              <CreateArea onAdd={addNote} />
+              <NoteList />
+            </Route>
+            <Route path="/reminder"component={Reminder} />
+            <Route path="/trash" component={Trash} />
+          </Switch>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 
