@@ -35,13 +35,13 @@ function CreateArea(props) {
     axios
       .post('http://localhost:5000', note)
       .then(res => {
-        props.onAdd(res.data);;
+        props.onAdd(res.data);
       });
   }
 
   return (
     <div>
-      <form className="create-note" action="/" method="post">
+      <form className={props.formClassName} action="/" method="post">
         {isClicked ? (
           <input
             name="title"

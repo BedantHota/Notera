@@ -130,6 +130,10 @@
     cursor: pointer;
     outline: none;
   }
+
+  form.reminder-input input{
+    margin-bottom: 0.5rem;
+  }
   
   .button{
     font-size: 25px;
@@ -143,3 +147,10 @@
     text-decoration: none;
     color: grey;
   }
+
+  
+.textField {
+  font-family: "Montserrat", sans-serif;
+    width: 200px;
+    color: grey;
+}

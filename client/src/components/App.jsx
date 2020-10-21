@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
 import Note from "./Note";
 import CreateArea from "./CreateArea";
 import Trash from "./Trash";
-import Reminder from "./Reminder"; 
+import Reminder from "./Reminder";
 
 function App() {
   const [notes, setNotes] = useState([]);
@@ -31,6 +31,7 @@ function App() {
     const responseId = {
       id: id
     };
+
     axios
       .post("http://localhost:5000/trash", responseId)
       .then(res => {
@@ -49,6 +50,7 @@ function App() {
       notes.map((noteItem) => {
         return (
           <Note
+            className="note"
             key={noteItem._id}
             id={noteItem._id}
             title={noteItem.title}
@@ -66,14 +68,20 @@ function App() {
     <Router>
       <div>
         <Header />
+        <div className="main-center">
           <Switch>
             <Route path="/" exact>
-              <CreateArea onAdd={addNote} />
+              <CreateArea formClassName="create-note" onAdd={addNote} />
               <NoteList />
             </Route>
-            <Route path="/reminder"component={Reminder} />
-            <Route path="/trash" component={Trash} />
+            <Route path="/reminder">
+              <Reminder />
+            </Route>
+            <Route path="/trash">
+              <Trash doRestoration={addNote} />
+            </Route>
           </Switch>
+        </div>
         <Footer />
       </div>
     </Router>

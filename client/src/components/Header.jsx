@@ -17,7 +17,7 @@ import ListItemIcon from "@material-ui/core/ListItemIcon";
 import AddAlertIcon from "@material-ui/icons/AddAlert";
 import DeleteIcon from "@material-ui/icons/Delete";
 import HighlightIcon from "@material-ui/icons/Highlight";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const drawerWidth = 240;
 
@@ -125,28 +125,28 @@ export default function PersistentDrawerRight() {
         <Divider />
         <List>
           <Link to="/">
-              <ListItem button key="Notes">
-                <ListItemIcon>
-                  <HighlightIcon/>
-                </ListItemIcon>
-                <ListItemText primary="Notes" />
-              </ListItem>
+            <ListItem button key="Notes">
+              <ListItemIcon>
+                <HighlightIcon />
+              </ListItemIcon>
+              <ListItemText primary="Notes" />
+            </ListItem>
           </Link>
           <Link to="/reminder">
-              <ListItem button key="Reminder">
-                <ListItemIcon>
-                  <AddAlertIcon/>
-                </ListItemIcon>
-                <ListItemText primary="Reminder" />
-              </ListItem>
+            <ListItem button key="Reminder">
+              <ListItemIcon>
+                <AddAlertIcon />
+              </ListItemIcon>
+              <ListItemText primary="Reminder" />
+            </ListItem>
           </Link>
           <Link to="/trash">
-              <ListItem button key="Trash">
-                <ListItemIcon>
-                  <DeleteIcon/>
-                </ListItemIcon>
-                <ListItemText primary="Trash" />
-              </ListItem>
+            <ListItem button key="Trash">
+              <ListItemIcon>
+                <DeleteIcon />
+              </ListItemIcon>
+              <ListItemText primary="Trash" />
+            </ListItem>
           </Link>
         </List>
       </Drawer>
