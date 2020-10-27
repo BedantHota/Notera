@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import Snackbar from "@material-ui/core/Snackbar";
+import IconButton from "@material-ui/core/IconButton";
+import CloseIcon from "@material-ui/icons/Close";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Header from "./Header";
-import Footer from "./Footer";
+// import Footer from "./Footer";
 import Note from "./Note";
 import CreateArea from "./CreateArea";
 import Trash from "./Trash";
@@ -10,6 +13,8 @@ import Reminder from "./Reminder";
 
 function App() {
   const [notes, setNotes] = useState([]);
+  const [open, setOpen] = useState(false);
+  const [isClicked, setClick] = useState(false);
 
   useEffect(() => {
     axios
@@ -19,8 +24,17 @@ function App() {
       });
   }, []);
 
+  const handleClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+
+    setOpen(false);
+  };
 
   function addNote(newNote) {
+    setClick(true);
+    setOpen(true);
     setNotes(prevNotes => {
       return [...prevNotes, newNote];
     });
@@ -28,6 +42,8 @@ function App() {
 
 
   function deleteNote(id) {
+    setClick(false);
+    setOpen(true);
     const responseId = {
       id: id
     };
@@ -72,7 +88,28 @@ function App() {
           <Switch>
             <Route path="/" exact>
               <CreateArea formClassName="create-note" onAdd={addNote} />
-              <NoteList />
+              <div className="grid">
+                <NoteList />
+              </div>
+              <Snackbar
+                style={{ position: "absolute" }}
+                className="snackbar"
+                anchorOrigin={{
+                  vertical: 'bottom',
+                  horizontal: 'left',
+                }}
+                severity="success"
+                open={open}
+                autoHideDuration={4000}
+                onClose={handleClose}
+                message={isClicked ? "Note added successfully." : "Note deleted succesfully."}
+                action={
+                  <React.Fragment>
+                    <IconButton size="small" aria-label="close" color="inherit" onClick={handleClose}>
+                      <CloseIcon fontSize="small" />
+                    </IconButton>
+                  </React.Fragment>}
+              />
             </Route>
             <Route path="/reminder">
               <Reminder />
@@ -82,7 +119,6 @@ function App() {
             </Route>
           </Switch>
         </div>
-        <Footer />
       </div>
     </Router>
   );

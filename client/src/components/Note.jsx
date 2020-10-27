@@ -97,6 +97,8 @@ function Note(props) {
         <DeleteIcon />
       </button>
       <Dialog
+        style={{ position: "absolute" }}
+        className="dialog-box"
         open={open}
         onClose={handleClick}
         aria-labelledby="alert-dialog-title"

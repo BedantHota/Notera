@@ -1,156 +1,211 @@
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  font-family: "Montserrat", sans-serif;
+}
+body {
+  font-family: "Montserrat", sans-serif;
+  overflow-x: hidden;
+  background: #eee;
+}
+
+/* header {
+  display: "flex";
+  width: 100vw;
+  height: 15vh;
+  background-color: #f5ba13;
+  padding: 16px 32px;
+} */
+
+header h1 {
+  color: #fff;
+  font-family: "McLaren", cursive;
+  font-weight: 200;
+}
+
+  /* Header component */
+  .title {
+    display: flex;
+    font-size: 30px;
+    flex-grow: 1;
+    font-family: "McLaren", cursive;
   }
-  html {
-    font-family: "Montserrat", sans-serif;
+  
+  .drawer {
+    width: 240px;
+    flex-shrink: 0;
   }
-  body {
-    font-family: "Montserrat", sans-serif;
-    overflow-x: hidden;
-    background: #eee;
+  
+  .drawerHeader {
+    display: "flex";
+    align-items: "center";
+    padding: themespacing(0, 1);
+    justify-content: "flex-start";
+  }
+  
+  .main-center{
     padding: 0 16px;
   }
-  
-  header {
-    display: "flex";
-    width: 100vw;
-    height: 15vh;
-    background-color: #f5ba13;
-    padding: 16px 32px;
-  }
-  
-  header h1 {
-    color: #fff;
-    font-family: "McLaren", cursive;
-    font-weight: 200;
-  }
 
-    /* Header component */
-    .title {
-      font-size: 30px;
-      flex-grow: 1;
-      font-family: "McLaren", cursive;
-    }
-    
-    .drawer {
-      width: 240px;
-      flex-shrink: 0;
-    }
-    
-    .drawerHeader {
-      display: "flex";
-      align-items: "center";
-      padding: themespacing(0, 1);
-      justify-content: "flex-start";
-    }
-    
+  /* ------------------ */
 
+footer {
+  position: absolute;
+  text-align: center;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;
+}
 
+footer p {
+  color: #ccc;
+}
 
-    /* ------------------ */
-  
-  footer {
-    position: absolute;
-    text-align: center;
-    bottom: 0;
-    width: 100%;
-    height: 2.5rem;
-  }
-  
-  footer p {
-    color: #ccc;
-  }
-  .note {
-    font-family: "Montserrat", sans-serif;
-    background: #fff;
-    border-radius: 7px;
-    box-shadow: 0 2px 5px #ccc;
-    padding: 10px;
-    width: 240px;
-    margin: 16px;
-    float: left;
-  }
-  .note h1 {
-    font-size: 1.1em;
-    margin-bottom: 6px;
-  }
-  .note p {
-    font-size: 1.1em;
-    margin-bottom: 10px;
-    white-space: pre-wrap;
-    word-wrap: break-word;
-  }
-  
-  .note button {
-    background-color: transparent;
-    position: relative;
-    float: right;
-    margin-right: 10px;
-    color: #f5ba13;
-    border: none;
-    width: 36px;
-    height: 36px;
-    cursor: pointer;
-    outline: none;
-    border-radius: 50%;
-  }
-  
-  form {
-    position: relative;
-    width: 480px;
-    margin: 30px auto 20px auto;
-    background: #fff;
-    padding: 15px;
-    border-radius: 7px;
-    box-shadow: 0 1px 5px rgb(138, 137, 137);
-  }
-  form input,
-  form textarea {
-    width: 100%;
-    border: none;
-    padding: 4px;
-    outline: none;
-    font-size: 1.2em;
-    font-family: inherit;
-    resize: none;
-  }
-  form button {
-    position: absolute;
-    right: 18px;
-    bottom: -18px;
-    background: #f5ba13;
-    color: #fff;
-    border: none;
-    border-radius: 50%;
-    width: 36px;
-    height: 36px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-    cursor: pointer;
-    outline: none;
-  }
+.grid{
+  width: 100%;
+  columns: 5;
+  column-gap: 40px;
+}
 
-  form.reminder-input input{
-    margin-bottom: 0.5rem;
-  }
-  
-  .button{
-    font-size: 25px;
-  }
-
-  .create-note{
-    font-family: "Montserrat", sans-serif;
-  }
-
-  a{
-    text-decoration: none;
-    color: grey;
-  }
-
-  
-.textField {
+.note {
   font-family: "Montserrat", sans-serif;
-    width: 200px;
-    color: grey;
+  background: #fff;
+  border-radius: 7px;
+  box-shadow: 0 2px 5px #ccc;
+  padding: 10px;
+  width: 240px;
+  margin: 16px;
+  float: left;
+  break-inside: avoid;
+}
+.note h1 {
+  font-size: 1.1em;
+  margin-bottom: 6px;
+}
+.note p {
+  font-size: 1.1em;
+  margin-bottom: 10px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.note button {
+  background-color: transparent;
+  position: relative;
+  float: right;
+  margin-right: 10px;
+  color: #f5ba13;
+  border: none;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  outline: none;
+  border-radius: 50%;
+}
+
+form {
+  position: relative;
+  width: 480px;
+  margin: 30px auto 20px auto;
+  background: #fff;
+  padding: 15px;
+  border-radius: 7px;
+  box-shadow: 0 1px 5px rgb(138, 137, 137);
+}
+form input,
+form textarea {
+  width: 100%;
+  border: none;
+  padding: 4px;
+  outline: none;
+  font-size: 1.2em;
+  font-family: inherit;
+  resize: none;
+}
+form button {
+  position: absolute;
+  right: 18px;
+  bottom: -18px;
+  background: #f5ba13;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  outline: none;
+}
+
+form.reminder-input input{
+  margin-bottom: 0.5rem;
+}
+
+.button{
+  font-size: 25px;
+}
+
+.create-note{
+  margin-top: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+a{
+  text-decoration: none;
+  color: grey;
+}
+
+
+.textField {
+font-family: "Montserrat", sans-serif;
+  width: 200px;
+  color: grey;
+}
+
+
+
+@media only screen and (max-width: 425px){
+  .create-note{
+    margin-top: 0;
+    width: 280px;
+  }
+
+  .grid{
+    width: 0;
+    columns: 0;
+    column-gap: 0;
+    margin-left: 50px;
+  }
+}
+@media only screen and (max-width: 375px){
+  .grid{
+    margin-left: 20px;
+  }
+}
+
+@media only screen and (max-width: 320px){
+  html{
+    overflow: hidden;
+  }
+
+  /* .MuiDialog-paper{ 
+    position: absolute;
+    width: 230px;
+    left: 0;
+    top: 30px;
+    margin-left: 15px;
+  }
+  .snackbar{
+    position: absolute;
+    bottom: 430px;
+    top: 10px;
+    left: 0;
+    width: 346px;
+  } */
+  .grid{
+    margin-left: 7px;
+  }
 }

@@ -23,6 +23,8 @@ const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => ({
   appBar: {
+    width: "100vw",
+    position: "inherit",
     backgroundColor: "#f5ba13",
     padding: "12px 12px",
     transition: theme.transitions.create(["margin", "width"], {
@@ -31,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
     })
   },
   appBarShift: {
-    width: `calc(100% - ${drawerWidth}px)`,
+    width: "100vw",
     transition: theme.transitions.create(["margin", "width"], {
       easing: theme.transitions.easing.easeOut,
       duration: theme.transitions.duration.enteringScreen
@@ -124,7 +126,7 @@ export default function PersistentDrawerRight() {
         </div>
         <Divider />
         <List>
-          <Link to="/">
+          <Link to="/" onClick={handleDrawerClose}>
             <ListItem button key="Notes">
               <ListItemIcon>
                 <HighlightIcon />
@@ -132,7 +134,7 @@ export default function PersistentDrawerRight() {
               <ListItemText primary="Notes" />
             </ListItem>
           </Link>
-          <Link to="/reminder">
+          <Link to="/reminder" onClick={handleDrawerClose}>
             <ListItem button key="Reminder">
               <ListItemIcon>
                 <AddAlertIcon />
@@ -140,7 +142,7 @@ export default function PersistentDrawerRight() {
               <ListItemText primary="Reminder" />
             </ListItem>
           </Link>
-          <Link to="/trash">
+          <Link to="/trash" onClick={handleDrawerClose}>
             <ListItem button key="Trash">
               <ListItemIcon>
                 <DeleteIcon />

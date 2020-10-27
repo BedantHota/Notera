@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Button from "@material-ui/core/Button";
 import Snackbar from "@material-ui/core/Snackbar";
 import IconButton from "@material-ui/core/IconButton";
 import CloseIcon from "@material-ui/icons/Close";
@@ -42,6 +41,7 @@ function Reminder() {
     };
 
     function deleteNote(id) {
+        setClick(false);
         setOpen(true);
         const responseId = {
             id: id
@@ -84,8 +84,12 @@ function Reminder() {
     return (
         <div>
             <CreateAreaReminder formClassName="create-note reminder-input" onAdd={addReminder} />
-            <NoteList />
+            <div className="grid">
+                <NoteList />
+            </div>
             <Snackbar
+                style={{ position: "absolute" }}
+                className="snackbar"
                 anchorOrigin={{
                     vertical: 'bottom',
                     horizontal: 'left',
