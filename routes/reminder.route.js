@@ -2,8 +2,10 @@ const express = require("express");
 const mongoose = require("mongoose");
 const Reminder = require("../models/reminder.model.js");
 const router = express.Router();
+const path = require('path');
 
 router.get("/", (req, res) => {
+    res.sendFile(path.resolve(__dirname, '../client', 'build', 'index.html'));
     Reminder.find({})
         .then(notes => res.json(notes))
         .catch(err => res.status(400).json("Error: " + err));

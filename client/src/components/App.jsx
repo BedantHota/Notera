@@ -12,7 +12,7 @@ import Trash from "./Trash";
 import Reminder from "./Reminder";
 
 function App() {
-  const [notes, setNotes] = useState([]);
+  const [notes, setNotes] = useState([{}]);
   const [open, setOpen] = useState(false);
   const [isClicked, setClick] = useState(false);
 

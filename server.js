@@ -12,7 +12,7 @@ require("./models/note.model.js");
 // Setting up server
 app.use(bodyParser.json({ urlencoded: true }));
 app.use(cors({
-  origin: "http://localhost:3000"
+  origin: "http://localhost:5000"
 }));
 
 // Connecting to MongoDB
@@ -25,20 +25,13 @@ connection.once('open', () => {
   console.log("MongoDB database connection established successfully");
 })
 
+app.use(express.static('client/build'));
+
 app.use("/", require("./routes/home.route.js"));
 app.use("/trash", require("./routes/trash.route.js"));
 app.use("/reminder", require("./routes/reminder.route.js"));
 
-// Serve static assests when in production
-if (process.env.NODE_ENV === 'production') {
-  //set static folder
-  app.use(express.static('client/build'));
 
-  //send index.html as response
-  app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
-  });
-}
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
