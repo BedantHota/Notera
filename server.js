@@ -30,15 +30,6 @@ app.use("/trash", require("./routes/trash.route.js"));
 app.use("/reminder", require("./routes/reminder.route.js"));
 
 // Serve static assests when in production
-if (process.env.NODE_ENV === 'production') {
-  //set static folder
-  app.use(express.static('client/build'));
-
-  //send index.html as response
-  app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
-  });
-}
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
