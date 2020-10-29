@@ -18,7 +18,7 @@ function Reminder() {
 
     useEffect(() => {
         axios
-            .get('http://localhost:5000/reminder')
+            .get('/reminder')
             .then(res => {
                 setReminder(res.data);
             });
@@ -48,7 +48,7 @@ function Reminder() {
         };
 
         axios
-            .post("http://localhost:5000/trash/deleteReminder", responseId)
+            .post("/trash/deleteReminder", responseId)
             .then(res => {
                 console.log(res.data);
             });

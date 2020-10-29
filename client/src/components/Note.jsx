@@ -46,7 +46,7 @@ function Note(props) {
     props.onDelete(id);
     axios({
       method: 'delete',
-      url: 'http://localhost:5000' + props.route,
+      url: props.route,
       data: {
         noteId: id
       }
@@ -61,7 +61,7 @@ function Note(props) {
     props.onRestore(id);
     axios({
       method: 'delete',
-      url: 'http://localhost:5000' + props.route,
+      url: props.route,
       data: {
         noteId: id
       }

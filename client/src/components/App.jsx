@@ -18,7 +18,7 @@ function App() {
 
   useEffect(() => {
     axios
-      .get('http://localhost:5000')
+      .get('/')
       .then(res => {
         setNotes(res.data);
       });
@@ -49,7 +49,7 @@ function App() {
     };
 
     axios
-      .post("http://localhost:5000/trash", responseId)
+      .post("/trash", responseId)
       .then(res => {
         console.log(res.data);
       });

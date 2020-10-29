@@ -12,7 +12,7 @@ function Trash(props) {
 
   useEffect(() => {
     axios
-      .get('http://localhost:5000/trash')
+      .get('/trash')
       .then(res => {
         setNotes(res.data);
       });
@@ -34,7 +34,7 @@ function Trash(props) {
     }
 
     axios
-      .put("http://localhost:5000/trash", restoreNoteId)
+      .put("/trash", restoreNoteId)
       .then(res => {
         props.doRestoration(res.data);
         console.log(res.data);
