@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
+import AddAlertIcon from '@material-ui/icons/AddAlert';
+import ImageIcon from '@material-ui/icons/Image';
+import MoreVertIcon from '@material-ui/icons/MoreVert';
 import Zoom from "@material-ui/core/Zoom";
 
 function CreateArea(props) {
@@ -58,6 +61,9 @@ function CreateArea(props) {
           placeholder="Take a note..."
           rows="3"
         />
+        <button style={{ display: isClicked ? "initial" : "none" }} className="icon"><MoreVertIcon fontSize="small" /></button>
+        <button style={{ display: isClicked ? "initial" : "none" }} className="icon"><AddAlertIcon fontSize="small" /></button>
+        <button style={{ display: isClicked ? "initial" : "none" }} className="icon"><ImageIcon fontSize="small" /></button>
         <Zoom in={isClicked ? true : false}>
           <button className="button" onClick={submitNote}>+</button>
         </Zoom>

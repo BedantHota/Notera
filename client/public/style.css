@@ -129,7 +129,7 @@ form textarea {
   font-family: inherit;
   resize: none;
 }
-form button {
+.button {
   position: absolute;
   right: 18px;
   bottom: -18px;
@@ -142,14 +142,24 @@ form button {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
   cursor: pointer;
   outline: none;
+  font-size: 25px;
+}
+
+.icon, .icon1{
+  cursor: pointer;
+  margin-right: 10px;
+  color: #747474;
+  background-color: transparent;
+  border: none;
+}
+
+.icon-reminder{
+  margin-left: 0px;
+  margin-top: 20px;
 }
 
 form.reminder-input input{
   margin-bottom: 0.5rem;
-}
-
-.button{
-  font-size: 25px;
 }
 
 .create-note{

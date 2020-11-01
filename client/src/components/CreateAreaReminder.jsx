@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 import Zoom from "@material-ui/core/Zoom";
-// import DatePicker from "./DatePicker.jsx";
+import ImageIcon from '@material-ui/icons/Image';
+import MoreVertIcon from '@material-ui/icons/MoreVert';
 import TextField from '@material-ui/core/TextField';
 
 
@@ -74,6 +75,10 @@ function CreateArea(props) {
                         shrink: true,
                     }}
                 /> : null}
+                {isClicked ? <div className="icon-reminder">
+                    <button style={{ display: isClicked ? "initial" : "none" }} className="icon"><MoreVertIcon fontSize="small" /></button>
+                    <button style={{ display: isClicked ? "initial" : "none" }} className="icon"><ImageIcon fontSize="small" /></button>
+                </div> : null}
                 <Zoom in={isClicked ? true : false}>
                     <button className="button" onClick={submitNote}>+</button>
                 </Zoom>
