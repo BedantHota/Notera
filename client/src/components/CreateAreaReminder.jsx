@@ -39,7 +39,7 @@ function CreateArea(props) {
         });
 
         axios
-            .post('http://localhost:5000/reminder', note)
+            .post('/api/reminder', note)
             .then(res => {
                 props.onAdd(res.data);
             });

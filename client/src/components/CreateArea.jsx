@@ -33,7 +33,7 @@ function CreateArea(props) {
     });
 
     axios
-      .post('http://localhost:5000', note)
+      .post('/api', note)
       .then(res => {
         props.onAdd(res.data);
       });

@@ -2,11 +2,9 @@ const express = require("express");
 const Trash = require("../models/trash.models.js");
 const Note = require("../models/note.model.js");
 const Reminder = require("../models/reminder.model.js");
-const path = require('path');
 const router = express.Router();
 
 router.get("/", (req, res) => {
-    res.sendFile(path.resolve(__dirname, '../client', 'build', 'index.html'));
     Trash.find({})
         .then((notes) => res.json(notes))
         .catch((err) => res.status(400).json("Error: " + err));

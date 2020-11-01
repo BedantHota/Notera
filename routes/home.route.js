@@ -2,10 +2,8 @@ const express = require("express");
 const mongoose = require("mongoose");
 const Note = require("../models/note.model.js");
 const router = express.Router();
-const path = require('path');
 
 router.get("/", (req, res) => {
-    res.sendFile(path.resolve(__dirname, '../client', 'build', 'index.html'));
     Note.find({})
         .then(notes => res.json(notes))
         .catch(err => res.status(400).json("Error: " + err));

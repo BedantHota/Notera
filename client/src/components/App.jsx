@@ -12,13 +12,13 @@ import Trash from "./Trash";
 import Reminder from "./Reminder";
 
 function App() {
-  const [notes, setNotes] = useState([{}]);
+  const [notes, setNotes] = useState([]);
   const [open, setOpen] = useState(false);
   const [isClicked, setClick] = useState(false);
 
   useEffect(() => {
     axios
-      .get('/')
+      .get('/api')
       .then(res => {
         setNotes(res.data);
       });
@@ -49,7 +49,7 @@ function App() {
     };
 
     axios
-      .post("/trash", responseId)
+      .post("/api/trash", responseId)
       .then(res => {
         console.log(res.data);
       });

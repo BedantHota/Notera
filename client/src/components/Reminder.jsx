@@ -18,7 +18,7 @@ function Reminder() {
 
     useEffect(() => {
         axios
-            .get('/reminder')
+            .get('/api/reminder')
             .then(res => {
                 setReminder(res.data);
             });
@@ -48,7 +48,7 @@ function Reminder() {
         };
 
         axios
-            .post("/trash/deleteReminder", responseId)
+            .post("/api/trash/deleteReminder", responseId)
             .then(res => {
                 console.log(res.data);
             });
@@ -65,7 +65,7 @@ function Reminder() {
             reminder.map((reminderItem) => {
                 return (
                     <Note
-                        className="note"
+                        className="reminder"
                         key={reminderItem._id}
                         id={reminderItem._id}
                         noteId={reminderItem._id}
@@ -84,7 +84,7 @@ function Reminder() {
     return (
         <div>
             <CreateAreaReminder formClassName="create-note reminder-input" onAdd={addReminder} />
-            <div className="grid">
+            <div className="grid grid-reminder">
                 <NoteList />
             </div>
             <Snackbar

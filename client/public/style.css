@@ -70,7 +70,11 @@ footer p {
   column-gap: 40px;
 }
 
-.note {
+.grid-reminder{
+  columns: 4;
+}
+
+.note,.reminder {
   font-family: "Montserrat", sans-serif;
   background: #fff;
   border-radius: 7px;
@@ -81,18 +85,18 @@ footer p {
   float: left;
   break-inside: avoid;
 }
-.note h1 {
+.note h1,.reminder h1 {
   font-size: 1.1em;
   margin-bottom: 6px;
 }
-.note p {
+.note p,.reminder p {
   font-size: 1.1em;
   margin-bottom: 10px;
   white-space: pre-wrap;
   word-wrap: break-word;
 }
 
-.note button {
+.note button, .reminder button {
   background-color: transparent;
   position: relative;
   float: right;

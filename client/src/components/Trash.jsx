@@ -6,13 +6,13 @@ import axios from "axios";
 import Note from "./Note";
 
 function Trash(props) {
-  const [notes, setNotes] = useState([]);
+  const [notes, setNotes] = useState(null);
   const [open, setOpen] = useState(false);
   const [isClicked, setClick] = useState(false);
 
   useEffect(() => {
     axios
-      .get('/trash')
+      .get('/api/trash')
       .then(res => {
         setNotes(res.data);
       });
@@ -34,7 +34,7 @@ function Trash(props) {
     }
 
     axios
-      .put("/trash", restoreNoteId)
+      .put("/api/trash", restoreNoteId)
       .then(res => {
         props.doRestoration(res.data);
         console.log(res.data);
@@ -74,7 +74,7 @@ function Trash(props) {
 
   return (
     <div>
-      <div className="grid"><NoteList /></div>
+      <div className="grid">{notes === null ? <p>Loading...</p> : <NoteList />}</div>
       <Snackbar
         style={{ position: "absolute" }}
         className="snackbar"
