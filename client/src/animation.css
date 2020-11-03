@@ -1,0 +1,55 @@
+.svg-animation{
+    text-align: center; 
+}
+
+#Vector_25{
+    animation: animation 1s linear infinite;
+    animation-delay: 1.75s;
+}
+#Vector_26{
+    animation: animation 1s linear infinite;
+    animation-delay: 1.5s;
+}
+#Vector_27{
+    animation: animation 1s linear infinite;
+    animation-delay: 1.25s;
+}
+#Vector_28{
+    animation: animation 1s linear infinite;
+    animation-delay: 1s;
+}
+
+#Vector_20{
+    animation: animation 1s linear infinite;
+    animation-delay: 2s;
+}
+#Vector_21{
+    animation: animation 1s linear infinite;
+    animation-delay: 2.25s;
+}
+#Vector_22{
+    animation: animation 1s linear infinite;
+    animation-delay: 2.5s;
+}
+#Vector_23{
+    animation: animation 1s linear infinite;
+    animation-delay: 2.75s;
+}
+#Vector_24{
+    animation: animation 1s linear infinite;
+    animation-delay: 3s;
+}
+
+#bulb-keeper{
+    animation: animation 1.5s linear infinite;
+}
+
+
+@keyframes animation {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}

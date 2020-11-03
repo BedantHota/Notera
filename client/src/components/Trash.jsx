@@ -4,6 +4,7 @@ import IconButton from "@material-ui/core/IconButton";
 import CloseIcon from "@material-ui/icons/Close";
 import axios from "axios";
 import Note from "./Note";
+import LoadingAnimation from "./LoadingAni";
 
 function Trash(props) {
   const [notes, setNotes] = useState(null);
@@ -74,7 +75,7 @@ function Trash(props) {
 
   return (
     <div>
-      {notes === null ? <p>Loading...</p> : notes.length === 0 ? <div className="centered-image-trash">
+      {notes === null ? <LoadingAnimation /> : notes.length === 0 ? <div className="centered-image-trash">
         <img src="https://i.ibb.co/9GrNgVg/Screenshot-2020-11-01-195018-removebg-preview.png" alt="Page" />
       </div> : <div className="grid"><NoteList /></div>}
       <Snackbar

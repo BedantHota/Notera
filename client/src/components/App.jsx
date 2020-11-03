@@ -10,6 +10,7 @@ import Note from "./Note";
 import CreateArea from "./CreateArea";
 import Trash from "./Trash";
 import Reminder from "./Reminder";
+import LoadingAnimation from "./LoadingAni";
 
 function App() {
   const [notes, setNotes] = useState(null);
@@ -88,7 +89,7 @@ function App() {
           <Switch>
             <Route path="/" exact>
               <CreateArea formClassName="create-note" onAdd={addNote} />
-              {notes === null ? <p>Loading...</p> : notes.length === 0 ? <div className="centered-image" >
+              {notes === null ? <LoadingAnimation /> : notes.length === 0 ? <div className="centered-image" >
                 <img src="https://i.ibb.co/Qcvh1t9/Keeper-Notes.png" alt="Page" />
               </div> : <div className="grid"><NoteList /></div>}
               <Snackbar

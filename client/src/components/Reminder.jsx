@@ -5,16 +5,13 @@ import CloseIcon from "@material-ui/icons/Close";
 import CreateAreaReminder from "./CreateAreaReminder.jsx";
 import axios from "axios";
 import Note from "./Note.jsx";
+import LoadingAnimation from "./LoadingAni";
 
 function Reminder() {
 
     const [reminder, setReminder] = useState(null);
     const [open, setOpen] = useState(false);
     const [isClicked, setClick] = useState(false);
-
-    const customStyles = {
-        width: "300px",
-    };
 
     useEffect(() => {
         axios
@@ -74,7 +71,6 @@ function Reminder() {
                         route="/reminder"
                         dateAndTime={reminderItem.date}
                         onDelete={deleteNote}
-                        customStyles={customStyles}
                     />
                 );
             })
@@ -84,7 +80,7 @@ function Reminder() {
     return (
         <div>
             <CreateAreaReminder formClassName="create-note reminder-input" onAdd={addReminder} />
-            {reminder === null ? <p>Loading...</p> : reminder.length === 0 ? <div className="centered-image-reminder">
+            {reminder === null ? <LoadingAnimation /> : reminder.length === 0 ? <div className="centered-image-reminder">
                 <img alt="page" src="https://i.ibb.co/VMr4Zqw/Screenshot-2020-11-01-194043-removebg-preview.png" />
                 <p>Notes with upcoming reminders appear here</p>
             </div> : <div className="grid grid-reminder"><NoteList /></div>}
