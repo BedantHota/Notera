@@ -74,7 +74,9 @@ function Trash(props) {
 
   return (
     <div>
-      <div className="grid">{notes === null ? <p>Loading...</p> : <NoteList />}</div>
+      {notes === null ? <p>Loading...</p> : notes.length === 0 ? <div className="centered-image-trash">
+        <img src="https://i.ibb.co/9GrNgVg/Screenshot-2020-11-01-195018-removebg-preview.png" alt="Page" />
+      </div> : <div className="grid"><NoteList /></div>}
       <Snackbar
         style={{ position: "absolute" }}
         className="snackbar"

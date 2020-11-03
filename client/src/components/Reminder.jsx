@@ -8,7 +8,7 @@ import Note from "./Note.jsx";
 
 function Reminder() {
 
-    const [reminder, setReminder] = useState([]);
+    const [reminder, setReminder] = useState(null);
     const [open, setOpen] = useState(false);
     const [isClicked, setClick] = useState(false);
 
@@ -84,9 +84,10 @@ function Reminder() {
     return (
         <div>
             <CreateAreaReminder formClassName="create-note reminder-input" onAdd={addReminder} />
-            <div className="grid grid-reminder">
-                <NoteList />
-            </div>
+            {reminder === null ? <p>Loading...</p> : reminder.length === 0 ? <div className="centered-image-reminder">
+                <img alt="page" src="https://i.ibb.co/VMr4Zqw/Screenshot-2020-11-01-194043-removebg-preview.png" />
+                <p>Notes with upcoming reminders appear here</p>
+            </div> : <div className="grid grid-reminder"><NoteList /></div>}
             <Snackbar
                 style={{ position: "absolute" }}
                 className="snackbar"

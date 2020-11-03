@@ -12,7 +12,7 @@ import Trash from "./Trash";
 import Reminder from "./Reminder";
 
 function App() {
-  const [notes, setNotes] = useState([]);
+  const [notes, setNotes] = useState(null);
   const [open, setOpen] = useState(false);
   const [isClicked, setClick] = useState(false);
 
@@ -88,9 +88,9 @@ function App() {
           <Switch>
             <Route path="/" exact>
               <CreateArea formClassName="create-note" onAdd={addNote} />
-              <div className="grid">
-                <NoteList />
-              </div>
+              {notes === null ? <p>Loading...</p> : notes.length === 0 ? <div className="centered-image" >
+                <img src="https://i.ibb.co/Qcvh1t9/Keeper-Notes.png" alt="Page" />
+              </div> : <div className="grid"><NoteList /></div>}
               <Snackbar
                 style={{ position: "absolute" }}
                 className="snackbar"
