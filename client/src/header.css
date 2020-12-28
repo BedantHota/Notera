@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:wght@300;400;700;900&family=Sacramento&display=swap');
+
+:focus{
+  outline: none;
+}
+
+
+.link{
+  color: #616161;
+}
+
+.link:hover{
+  text-decoration: none;
+  color: #616161;
+}
+
+header{
+    box-shadow: none;
+    border-bottom: 1px solid #616161;
+    background-color: white;
+}
+
+.headerIcon{
+  padding: 0px;
+  height: 40px;
+  background-color: transparent;
+  border: none;
+  color: #1D4AFF;
+}
+
+.headerIcon:hover{
+  color: #3B99ED;
+}
+
+.addNoteIcon{
+  margin-left: 30px;
+  margin-top: -3px;
+}
+
+.darkmodeIcon{
+  margin-right: 20px;
+  margin-top: 6px;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  background-color: #1D4AFF;
+  color: white;
+}
+
+.darkmodeIcon:hover{
+  background-color: #3B99ED;
+}
+
+.darkmodeIcon svg{
+  margin-top: -6px;
+  margin-left: 2px;
+  width: 15px;
+  height: 15px;
+}
+
+.headerLogo{
+  font-family: 'Righteous';
+  font-size: 23px;
+}
+
+.MuiPaper-elevation4{
+  box-shadow: none;
+}
+
+h3{
+  text-align: center;
+  font-family: 'Righteous', cursive;
+}
+
+.settings{
+  margin-top: 45vh;
+}
+
+.logo-header{
+  display: block;
+  margin: auto;
+  font-family: 'Righteous', cursive;
+  font-size: 2rem;
+}
+
+.a{
+  margin-top: 5px;
+  text-decoration: none;
+  color: #808080;
+}
+
+.a:hover{
+  text-decoration: none;
+  color: #808080;
+}
+
+header {
+    position: relative;
+    height: 60px auto;
+    padding-left: 7px;
+  }
+  
+  header .MuiToolbar-regular {
+    padding-left: 1%;
+  }
+  
+  .search-bar input {
+    width: 250px;
+    border-radius: 5px;
+    height: auto;
+    border: 1px solid #707070;
+    background-color: transparent;
+    margin-left: 40px;
+    padding: 3px 3px 3px 10px;
+    color: #707070;
+  }
+  
+  .search-bar input::-webkit-input-placeholder {
+    color: #707070;
+    vertical-align: middle;
+  }
+  
+  .search-bar input:-ms-input-placeholder {
+    color: #707070;
+    vertical-align: middle;
+  }
+  
+  .search-bar input::-ms-input-placeholder {
+    color: #707070;
+    vertical-align: middle;
+  }
+  
+  .search-bar input::placeholder {
+    color: #707070;
+    vertical-align: middle;
+  }
+  
+  .account {
+    position: absolute;
+    right: 0;
+    margin-right: 20px;
+  }
+  
+  .account .accountDetails {
+    width: 38px;
+    height: 38px;
+    background-color: bisque;
+    border-radius: 50%;
+    text-align: center;
+    padding-top: 6px;
+  }
+  
+  .account .accountDetails svg {
+    width: 32px;
+    height: 23px;
+  }
+
+  .version, .license{
+    margin-bottom: 5px;
+    text-align: center;
+    font-family: 'Roboto';
+    color:#808080;
+  }
+
+  .version{
+    margin-top: 10px;
+    font-size: 1rem;
+  }
+    

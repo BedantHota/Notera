@@ -1,0 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:wght@300;400;700;900&family=Sacramento&display=swap");
+html, body {
+  background-color: #ffffff;
+  font-family: "Roboto", sans-serif;
+}
+
+*:focus{
+  outline: none;
+}
+
+header button:focus{
+  outline: none;
+}
+
+a{
+  text-decoration: none;
+}
+
+.main-center {
+  overflow-x: hidden;
+  background-color: #eeeeee;
+}
+.github {
+  background-image: url("./vector.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 381px;
+  text-align: center;
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:wght@300;400;700;900&family=Sacramento&display=swap');
+$font-body: 'Roboto', sans-serif;
+$font-righteous: 'Righteous', cursive;
+$font-style: 'Sacramento', cursive;
+
+html, body{
+    background: #eeeeee;
+    font-family: $font-body;
+}
+
+// #Tags
+
+a{
+    text-decoration: none;
+}
+
+.main-center{
+    overflow-x: hidden;
+    background-color: #eeeeee;
+  }
+  
+  .github {
+    background-image: url("./vector.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 381px;
+    text-align: center;
+  }
+
+@media only screen and (max-width: 1125px){
+    // Minor Changes only here
+}
+
+@media only screen and (max-width: 1024px){
+    // Minor Changes only here
+}
+
+@media only screen and (max-width: 991.98px){
+    // Major Changes for below 991.98px
+}
+
+@media only screen and (max-width: 562px){
+    // Minor Changes only here
+}   
+
+@media only screen and (max-width: 425px){
+    // Minor Changes only here
+}
+
+@media only screen and (max-width: 360px){
+    // Minor Changes only here
+}

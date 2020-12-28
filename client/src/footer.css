@@ -1,0 +1,15 @@
+footer {
+    margin-top: 70px;
+    margin-bottom: 30px; 
+    text-align: center;         /* Footer height */
+  }
+  
+  footer p {
+    text-align: center;
+    font-family: "Sacramento", cursive;
+    font-size: 1.4rem;
+  }
+  
+  footer span {
+    color: red;
+  }

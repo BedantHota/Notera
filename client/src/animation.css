@@ -1,0 +1,55 @@
+.svg-animation{
+    text-align: center; 
+}
+
+#Line_25{
+    animation: animation 1s linear infinite;
+    animation-delay: 1.75s;
+}
+#Line_26{
+    animation: animation 1s linear infinite;
+    animation-delay: 1.5s;
+}
+#Line_27{
+    animation: animation 1s linear infinite;
+    animation-delay: 1.25s;
+}
+#Line_28{
+    animation: animation 1s linear infinite;
+    animation-delay: 1s;
+}
+
+#Line_20{
+    animation: animation 1s linear infinite;
+    animation-delay: 2s;
+}
+#Line_21{
+    animation: animation 1s linear infinite;
+    animation-delay: 2.25s;
+}
+#Line_22{
+    animation: animation 1s linear infinite;
+    animation-delay: 2.5s;
+}
+#Line_23{
+    animation: animation 1s linear infinite;
+    animation-delay: 2.75s;
+}
+#Line_24{
+    animation: animation 1s linear infinite;
+    animation-delay: 3s;
+}
+
+#bulb-keeper{
+    animation: animation 1.5s linear infinite;
+}
+
+
+@keyframes animation {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}

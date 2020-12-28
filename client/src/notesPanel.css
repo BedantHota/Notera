@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+h4{
+    font-family: 'Righteous','cursive';
+    text-align: center;
+}
+
+hr{
+    margin-bottom: 0;
+}
+
+.app-layout{
+    display: flex;
+    flex: 1 0 auto;
+    width: 100%;
+}
+
+.app-layout button:focus{
+    outline: none;
+}
+
+.right{
+    background-color: #ffffff;
+    width: 80vw;
+}
+
+.notesPanel{
+    background-color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    padding: 10px 15px 10px 15px;
+    border-right: 1px solid #616161;
+    box-sizing: border-box;
+    direction: ltr;
+    height: 91vh;
+    position: relative;
+    width: 370px;
+    will-change: transform;
+    overflow: auto;
+}
+
+.note-list-items{
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    overflow: hidden;
+    background: inherit;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+/* Track */
+::-webkit-scrollbar-track {
+background: #ffffff; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+background: #e8e8e8; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+background: #888; 
+}
+
+.sort{
+    margin: 10px;
+    margin-bottom: 20px;
+}
+
+.sortbySelect{
+    color: #707070;
+    padding: 3px 15px 3px 15px;
+    border-color: #707070;
+    background-color: transparent;
+    font-size: 12px;
+}
+
+
+.input-note{
+    position: relative;
+}
+
+.create-note-above-icons{
+    text-align: right;
+    margin-right: 100px;
+    margin-top: 15px;
+}
+
+.icon{
+    text-align: center;
+    background-color: transparent;
+    padding: 0%;
+    width: 40px;
+    height: 40px;
+    border: none;
+    color: #1D4AFF;
+}
+
+.icon:hover{
+    color: #6684FF;
+}
+
+.addIcon{
+    position: absolute;
+    bottom: 9%;
+    right: 12%;
+    border-radius: 50%;
+    text-align: center;
+    background-color: #794BFF;
+    padding: 0%;
+    width: 40px;
+    height: 40px;
+    border: none;
+    color: #ffffff;
+}
+
+.addIcon:hover{
+    background-color: #9774FF;
+}
+
+.note{
+    cursor: pointer;
+    background-color: #74B5EF;
+    padding-bottom: 1px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.note:hover{
+    background-color: #3B99ED;
+}
+
+.note .title{
+    color: #ffffff;
+    font-weight: 500;
+    padding-left: 15px;
+    padding-top: 10px;
+    font-size: 1.2rem;
+    margin-bottom: 0px;
+}
+
+.note .content{
+    color: #ffffff;
+    padding-left: 15px;
+    padding-top: 5px;
+    font-size: 1rem;
+    margin-top: 0px;
+}
+
+.create-note{
+    text-align: center;
+    margin-top: 5px;
+}
+
+.title-input{
+    border: none;
+    width: 80%;
+    display: block;
+    margin: auto;
+    padding: 20px 0px 0px 25px;
+    font-family: "Roboto";
+    font-size: 1.2rem;
+    border: 1px solid #989898;
+    border-bottom: none;
+    border-radius: 10px 10px 0px 0px;
+    background-color: transparent;
+}
+
+.content-input{
+    font-size: 1rem;
+    border: none;
+    width: 80%;
+    display: block;
+    margin: auto;
+    padding: 10px 0px 0px 25px;
+    border: 1px solid #989898;
+    border-top: none;
+    border-radius: 0px 0px 10px 10px;
+    background-color: transparent;
+}
+
+.reminderBtn{
+    border: none;
+    width: 40px;
+    height: 40px;
+    padding: 0px;
+    background-color: transparent;
+    position: absolute;
+    left: 10%;
+    bottom: 0;
+    margin: 0px 0px 10px 15px;
+}
