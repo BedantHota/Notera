@@ -22,7 +22,7 @@ app.use((req, res, next) => {
 
 // Connecting to MongoDB
 mongoose.Promise = global.Promise;
-const uri = 'mongodb+srv://bedant-hota:root@cluster0.ppa1i.mongodb.net/KeeperApp';
+const uri = 'MONGODB_URI';
 mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
 const connection = mongoose.connection;
