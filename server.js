@@ -6,7 +6,7 @@ const path = require("path");
 const cors = require("cors");
 const app = express();
 
-
+require("dotenv").config();
 // IMPORT Models
 require("./models/note.model.js");
 
@@ -22,7 +22,7 @@ app.use((req, res, next) => {
 
 // Connecting to MongoDB
 mongoose.Promise = global.Promise;
-const uri = 'MONGODB_URI';
+const uri = process.env.ATLAS_URI;
 mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
 const connection = mongoose.connection;
