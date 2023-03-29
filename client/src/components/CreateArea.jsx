@@ -1,16 +1,16 @@
 import React, { useState } from "react";
-import axios from "axios";
-import AddAlertIcon from '@material-ui/icons/AddAlert';
-import ImageIcon from '@material-ui/icons/Image';
-import MoreVertIcon from '@material-ui/icons/MoreVert';
+import AddAlertIcon from "@material-ui/icons/AddAlert";
+import ImageIcon from "@material-ui/icons/Image";
+import MoreVertIcon from "@material-ui/icons/MoreVert";
 import Zoom from "@material-ui/core/Zoom";
+import http from "../libs/http";
 
 function CreateArea(props) {
   const [isClicked, setClick] = useState(false);
 
   const [note, setNote] = useState({
     title: "",
-    content: ""
+    content: "",
   });
 
   function handleClick() {
@@ -20,10 +20,10 @@ function CreateArea(props) {
   function handleChange(event) {
     const { name, value } = event.target;
 
-    setNote(prevNote => {
+    setNote((prevNote) => {
       return {
         ...prevNote,
-        [name]: value
+        [name]: value,
       };
     });
   }
@@ -32,14 +32,12 @@ function CreateArea(props) {
     event.preventDefault();
     setNote({
       title: "",
-      content: ""
+      content: "",
     });
 
-    axios
-      .post('/api', note)
-      .then(res => {
-        props.onAdd(res.data);
-      });
+    http.post("/api", note).then((res) => {
+      props.onAdd(res.data);
+    });
   }
 
   return (
@@ -61,11 +59,28 @@ function CreateArea(props) {
           placeholder="Take a note..."
           rows="3"
         />
-        <button style={{ display: isClicked ? "initial" : "none" }} className="icon"><MoreVertIcon fontSize="small" /></button>
-        <button style={{ display: isClicked ? "initial" : "none" }} className="icon"><AddAlertIcon fontSize="small" /></button>
-        <button style={{ display: isClicked ? "initial" : "none" }} className="icon"><ImageIcon fontSize="small" /></button>
+        <button
+          style={{ display: isClicked ? "initial" : "none" }}
+          className="icon"
+        >
+          <MoreVertIcon fontSize="small" />
+        </button>
+        <button
+          style={{ display: isClicked ? "initial" : "none" }}
+          className="icon"
+        >
+          <AddAlertIcon fontSize="small" />
+        </button>
+        <button
+          style={{ display: isClicked ? "initial" : "none" }}
+          className="icon"
+        >
+          <ImageIcon fontSize="small" />
+        </button>
         <Zoom in={isClicked ? true : false}>
-          <button className="button" onClick={submitNote}>+</button>
+          <button className="button" onClick={submitNote}>
+            +
+          </button>
         </Zoom>
       </form>
     </div>
