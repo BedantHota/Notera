@@ -12,14 +12,15 @@ require("./models/note.model.js");
 
 // Setting up server
 app.use(bodyParser.json({ urlencoded: true }));
-app.use(
-  cors({
-    origin: "*",
-    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-    preflightContinue: false,
-    optionsSuccessStatus: 204,
-  })
-);
+
+// setup cors to allow us to accept requests from our client
+app.use(cors({
+  origin: ["https://jolly-melba-f00c0b.netlify.app"], // allow to server to accept request from different origin
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  credentials: true, // allow session cookie from browser to pass through
+  'Access-Control-Allow-Origin': 'https://jolly-melba-f00c0b.netlify.app',
+  'Access-Control-Allow-Credentials': true
+}));
 
 // This application level middleware prints incoming requests to the servers console, useful to see incoming requests
 app.use((req, res, next) => {

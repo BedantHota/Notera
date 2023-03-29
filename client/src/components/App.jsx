@@ -20,6 +20,9 @@ function App() {
   useEffect(() => {
     http.get("/api").then((res) => {
       setNotes(res.data);
+    })
+    .catch((err) => {
+      console.error(err);
     });
   }, []);
 
